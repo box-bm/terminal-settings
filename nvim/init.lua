@@ -1,9 +1,6 @@
 require("remap")
 
-local lazypath = vim.fn.stdpath("config") .. "/lazy/lazy.nvim"
-vim.opt.rtp:prepend(lazypath)
-
-require("lazy").setup("plugins")
+require("config.lazy")
 
 require("plugin.theme")
 require("plugin.lsp")
