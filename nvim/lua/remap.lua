@@ -15,14 +15,18 @@ map("n", "<C-L>", "<C-W>l", { silent = true, desc = "Move to right window" })
 
 -- Buffer management
 -- Next buffer
-map("n", "<leader>bn", ":bnext<CR>", { silent = true, desc = "Next buffer" })
+map("n", "<leader>wn", ":bnext<CR>", { silent = true, desc = "Next buffer" })
 -- Previous buffer
-map("n", "<leader>bp", ":bprevious<CR>", { silent = true, desc = "Previous buffer" })
+map("n", "<leader>wp", ":bprevious<CR>", { silent = true, desc = "Previous buffer" })
 -- Delete buffer
-map("n", "<leader>bd", ":bdelete<CR>", { silent = true, desc = "Delete buffer" })
-
+map("n", "<leader>wd", ":bdelete<CR>", { silent = true, desc = "Delete buffer" })
 -- Toggle terminal
 map("n", "<leader>tt", "<cmd>ToggleTerm<CR>", { silent = true, desc = "Toggle terminal" })
+
+-- Split
+vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { noremap = true, silent = true, desc = "Vertical Split" })   -- Split vertical
+vim.keymap.set("n", "<leader>sh", ":split<CR>", { noremap = true, silent = true, desc = "Horizontal Split" })    -- Split horizontal
+
 
 -- LSP mappings
 -- Go to definition
