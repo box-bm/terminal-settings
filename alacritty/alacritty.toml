@@ -1,0 +1,25 @@
+[general]
+import = ["~/.config/alacritty/catppuccin-latte.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+dynamic_padding = true
+padding = { x = 0, y = 24}
+decorations = "Transparent"
+blur = true
+opacity = 0.8
+
+[scrolling]
+history = 10000
+
+[font]
+normal = { family = "MesloLGS NF", style = "Regular" }
+size = 12
+
+[colors]
+transparent_background_colors = true
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
