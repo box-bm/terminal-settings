@@ -15,18 +15,33 @@ map("n", "<C-L>", "<C-W>l", { silent = true, desc = "Move to right window" })
 
 -- Buffer management
 -- Next buffer
-map("n", "<leader>wn", ":bnext<CR>", { silent = true, desc = "Next buffer" })
+map("n", "<leader>bn", ":bnext<CR>", { silent = true, desc = "Next buffer" })
 -- Previous buffer
-map("n", "<leader>wp", ":bprevious<CR>", { silent = true, desc = "Previous buffer" })
+map("n", "<leader>bp", ":bprevious<CR>", { silent = true, desc = "Previous buffer" })
 -- Delete buffer
-map("n", "<leader>wd", ":bdelete<CR>", { silent = true, desc = "Delete buffer" })
+map("n", "<leader>bd", ":bdelete<CR>", { silent = true, desc = "Delete buffer" })
+
 -- Toggle terminal
 map("n", "<leader>tt", "<cmd>ToggleTerm<CR>", { silent = true, desc = "Toggle terminal" })
+map("n", "<leader>tf", "<cmd>ToggleTerm direction=float<CR>", { silent = true, desc = "Toggle floating terminal" })
+map("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<CR>", { silent = true, desc = "Toggle horizontal terminal" })
+map("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<CR>", { silent = true, desc = "Toggle vertical terminal" })
+map("t", "<Esc>", "<C-\\><C-n>", { silent = true, desc = "Return to normal mode in terminal" })
+map("n", "<leader>tn", "<cmd>ToggleTerm direction=tab<CR>", { silent = true, desc = "Open new terminal in tab" })
 
--- Split
-vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { noremap = true, silent = true, desc = "Vertical Split" })   -- Split vertical
-vim.keymap.set("n", "<leader>sh", ":split<CR>", { noremap = true, silent = true, desc = "Horizontal Split" })    -- Split horizontal
+-- split buffer
+map("n", "<leader>ss", "<C-W>s", { silent = true, desc = "Split buffer horizontally" })
+map("n", "<leader>sv", "<C-W>v", { silent = true, desc = "Split buffer vertically" })
 
+-- duplicate selection down
+map("n", "<leader>dd", "yyp", { silent = true, desc = "Duplicate selection down" })
+map("n", "<leader>du", "yypk", { silent = true, desc = "Duplicate selection up" })
+
+-- in finder or leader ff, open file in new tab
+map("n", "<leader>ft", "<cmd>tabnew <C-R>=expand('<cfile>')<CR><CR>", { silent = true, desc = "Open file in new tab" })
+
+-- format code with prettier
+map("n", "<leader>pf", "<cmd>Prettier<CR>", { silent = true, desc = "Format code with Prettier" })
 
 -- LSP mappings
 -- Go to definition

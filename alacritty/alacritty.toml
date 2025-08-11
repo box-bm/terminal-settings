@@ -5,10 +5,10 @@ import = ["~/.config/alacritty/catppuccin-latte.toml"]
 TERM = "xterm-256color"
 
 [window]
-dynamic_padding = true
-decorations = "Transparent"
+dynamic_padding = false
+decorations = "full"
 blur = true
-opacity = 0.75
+opacity = 0.85
 
 [scrolling]
 history = 10000
@@ -16,7 +16,6 @@ history = 10000
 [font]
 normal = { family = "MesloLGS NF", style = "Regular" }
 size = 12
-offset = { x = 0, y = 2 }
 
 [colors]
 transparent_background_colors = true
