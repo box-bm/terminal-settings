@@ -14,13 +14,22 @@ return {
 		version = false, -- last release is way too old
 		event = { "InsertEnter", "CmdlineEnter" },
 		dependencies = {
+			"neovim/nvim-lspconfig",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+			"petertriho/cmp-git",
 		},
 	},
 	-- Snippets engine and collection
-	{ "L3MON4D3/LuaSnip", version = "*", build = "make install_jsregexp" },
+	{
+		"L3MON4D3/LuaSnip",
+		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		build = "make install_jsregexp",
+	},
 	{ "rafamadriz/friendly-snippets" },
 
 	-- Autopares
@@ -121,5 +130,14 @@ return {
 			"BufReadPre",
 			"BufNewFile",
 		},
+	},
+	{
+		"kylechui/nvim-surround",
+		version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+	},
+
+	{
+		"echasnovski/mini.bufremove",
 	},
 }
