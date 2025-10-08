@@ -1,8 +1,8 @@
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'buffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'help tags' })
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files by name' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Search text in the entire project' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'View and switch between open buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Search Neovim help tags' })
 
 local actions = require("telescope.actions")
 local open_with_trouble = require("trouble.sources.telescope").open
@@ -18,5 +18,7 @@ telescope.setup({
       i = { ["<c-t>"] = open_with_trouble },
       n = { ["<c-t>"] = open_with_trouble },
     },
+    file_ignore_patterns = {},
+    hidden = true,
   },
 })

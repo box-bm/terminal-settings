@@ -1,7 +1,7 @@
 require("remap")
 
 require("config.lazy")
-
+require("plugin.autopairs")
 require("plugin.theme")
 require("plugin.lsp")
 require("plugin.cmp")
@@ -11,6 +11,7 @@ require("plugin.lualine")
 require("plugin.gitsigns")
 require("plugin.formatting")
 require("plugin.linters")
+require("plugin.bufremove")
 require("toggleterm")
 
 vim.o.number = true
