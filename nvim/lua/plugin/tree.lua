@@ -19,7 +19,11 @@ end
 require("nvim-tree").setup({
 	update_focused_file = {
 		enable = true,
-		update_root = false,
+		update_root = true,
+	},
+	view = {
+		width = 50,
+		side = "left",
 	},
 	on_attach = my_on_attach,
 	sort = {
@@ -27,6 +31,14 @@ require("nvim-tree").setup({
 	},
 	git = {
 		ignore = false,
+	},
+	filters = {
+		enable = false,
+	},
+	actions = {
+		open_file = {
+			resize_window = true,
+		},
 	},
 })
 

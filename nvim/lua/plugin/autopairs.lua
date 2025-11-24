@@ -1,7 +1,7 @@
 local npairs = require("nvim-autopairs")
 
 npairs.setup({
-    check_ts = true,
+	check_ts = true,
 })
 
 -- If you want insert `(` after select function or method item
@@ -11,6 +11,11 @@ cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 -- config for surround
 require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
-
+	keymaps = {
+		normal = "ys", -- add surround
+		normal_cur = "yss", -- add surround to current line
+		delete = "ds", -- delete surround
+		change = "cs", -- change surround
+		visual = "S", -- surround selection
+	},
+})

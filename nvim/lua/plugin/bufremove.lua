@@ -1,26 +1,27 @@
 local bufremove = require("mini.bufremove")
+bufremove.setup()
 
--- Cerrar buffer actual (normal)
+local opts = { noremap = true, silent = true }
+
+-- Cerrar buffer actual sin cerrar ventana
 vim.keymap.set("n", "<leader>bd", function()
 	bufremove.delete(0, false)
-end, { desc = "Close buffer" })
+end, { desc = "Cerrar buffer (sin forzar)", noremap = true, silent = true })
 
--- Cerrar buffer actual forzado (sin guardar cambios)
+-- Forzar cierre del buffer actual
 vim.keymap.set("n", "<leader>bD", function()
 	bufremove.delete(0, true)
-end, { desc = "Force close buffer" })
+end, { desc = "Cerrar buffer (forzar)", noremap = true, silent = true })
 
--- Wipeout (como si nunca hubiera existido)
-vim.keymap.set("n", "<leader>bw", function()
-	bufremove.wipeout(0, false)
-end, { desc = "Wipeout buffer" })
+-- Navegar buffers
+vim.keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Buffer siguiente", noremap = true, silent = true })
+vim.keymap.set("n", "<S-Tab>", ":bprev<CR>", { desc = "Buffer anterior", noremap = true, silent = true })
 
--- Cerrar todos menos el actual (muy usado en VSCode)
-vim.keymap.set("n", "<leader>bo", function()
-	local current = vim.fn.bufnr()
-	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-		if vim.api.nvim_buf_is_loaded(buf) and buf ~= current then
-			bufremove.delete(buf, false)
-		end
-	end
-end, { desc = "Close other buffers" })
+-- Listar buffers
+vim.keymap.set("n", "<leader>bl", ":ls<CR>", { desc = "Listar buffers", noremap = true, silent = true })
+
+local map = vim.api.nvim_set_keymap
+
+-- split buffer
+map("n", "<leader>sh", "<C-W>s", { silent = true, desc = "Split buffer horizontally" })
+map("n", "<leader>sv", "<C-W>v", { silent = true, desc = "Split buffer vertically" })

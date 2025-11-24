@@ -12,7 +12,7 @@ require("plugin.gitsigns")
 require("plugin.formatting")
 require("plugin.linters")
 require("plugin.bufremove")
-require("toggleterm")
+require("plugin.toggleterm")
 
 vim.o.number = true
 vim.o.relativenumber = true

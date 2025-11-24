@@ -44,8 +44,9 @@ return {
 		tag = "0.1.8",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+
 	{
-		"nvim-tree/nvim-tree.lua",
+		"nvim-tree/nvim-tree.lua", -- For file explorer
 		version = "*",
 		lazy = false,
 		dependencies = {
@@ -55,7 +56,7 @@ return {
 
 	-- trouble
 	{
-		"folke/trouble.nvim",
+		"folke/trouble.nvim", -- For showing diagnostics, references, etc.
 		opts = {}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",
 		keys = {
@@ -94,14 +95,10 @@ return {
 
 	-- copilot
 	"github/copilot.vim",
+
 	{
-		"folke/which-key.nvim",
+		"folke/which-key.nvim", -- For displaying possible keybindings
 		event = "VeryLazy",
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
 		keys = {
 			{
 				"<leader>?",
@@ -112,32 +109,37 @@ return {
 			},
 		},
 	},
+
 	{
-		"nvim-lualine/lualine.nvim",
+		"nvim-lualine/lualine.nvim", -- For statusline
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	{
-		"lewis6991/gitsigns.nvim",
+		"lewis6991/gitsigns.nvim", -- For Git integration
 	},
-	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+	{ "akinsho/toggleterm.nvim", version = "*", config = true }, -- Toggle terminal
 	{
-		"stevearc/conform.nvim",
+		"stevearc/conform.nvim", -- For formatting
 		event = { "BufReadPre", "BufNewFile" },
 	},
 	{
-		"mfussenegger/nvim-lint",
+		"mfussenegger/nvim-lint", -- For linting
 		event = {
 			"BufReadPre",
 			"BufNewFile",
 		},
 	},
 	{
-		"kylechui/nvim-surround",
+		"kylechui/nvim-surround", -- For surrounding text
 		version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
 		event = "VeryLazy",
 	},
 
 	{
-		"echasnovski/mini.bufremove",
+		"echasnovski/mini.bufremove", -- For buffer removal
+	},
+	{
+		"mg979/vim-visual-multi", -- For multicursor
+		branch = "master",
 	},
 }

@@ -1,8 +1,7 @@
 require("catppuccin").setup({
-	flavour = "mocha", -- latte, frappe, macchiato, mocha
-	transparent_background = false, -- disables setting the background color.
-	show_end_of_buffer = true, -- shows the '~' characters after the end of buffers
-	default_integrations = true,
+	dim_inactive = {
+		enabled = true,
+	},
 	auto_integrations = true,
 	integrations = {
 		mason = true,
