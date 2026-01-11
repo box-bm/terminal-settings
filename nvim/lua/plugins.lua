@@ -46,9 +46,19 @@ return {
   },
   -- Find
   {
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    'nvim-telescope/telescope.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      -- optional but recommended
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    }
+  },
+
+  -- treesitter
+  {
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    build = ':TSUpdate'
   },
 
   {

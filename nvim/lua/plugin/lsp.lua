@@ -24,6 +24,8 @@ require("mason-lspconfig").setup({
     "rust_analyzer",
     -- sql
     "sqlls",
+    -- yml
+    "yamlls",
   },
 })
 
@@ -41,6 +43,7 @@ vim.lsp.enable("pyright")
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("sqlls")
+vim.lsp.enable("yamlls")
 
 vim.lsp.config.dartls = {
   cmd = { "dart", "language-server", "--protocol=lsp" },

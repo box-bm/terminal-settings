@@ -39,7 +39,17 @@ require("nvim-tree").setup({
     open_file = {
       resize_window = true,
     },
+    change_dir = {
+      enable = true,
+      restrict_above_cwd = true,
+    },
   },
+  renderer = {
+    root_folder_label = ":t",
+    indent_markers = {
+      enable = false,
+    },
+  }
 })
 
 vim.keymap.set("n", "<Leader>et", ":NvimTreeToggle<CR>", { noremap = true, silent = true, desc = "Toggle NvimTree" })
