@@ -1,6 +1,6 @@
 require("remap")
-
 require("config.lazy")
+
 require("plugin.autopairs")
 require("plugin.theme")
 require("plugin.lsp")
@@ -14,22 +14,25 @@ require("plugin.linters")
 require("plugin.bufremove")
 require("plugin.toggleterm")
 
-vim.o.number = true
-vim.o.relativenumber = true
+local opt = vim.opt
 
-vim.o.clipboard = "unnamedplus"
-vim.o.scrolloff = 8
-vim.o.sidescrolloff = 8
+opt.number = true
+opt.relativenumber = true
 
-vim.o.expandtab = true
-vim.o.shiftwidth = 2
-vim.o.tabstop = 2
-vim.o.smartindent = true
+opt.clipboard = "unnamedplus"
+opt.scrolloff = 8
+opt.sidescrolloff = 8
 
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.hlsearch = false
+opt.expandtab = true
+opt.shiftwidth = 2
+opt.tabstop = 2
+opt.smartindent = true
 
-vim.o.signcolumn = "yes"
-vim.o.updatetime = 300
-vim.o.termguicolors = true
+opt.ignorecase = true
+opt.smartcase = true
+opt.hlsearch = false
+
+opt.signcolumn = "yes"
+opt.cursorline = true
+opt.splitright = true
+opt.splitbelow = true

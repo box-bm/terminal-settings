@@ -1,30 +1,36 @@
 local bufremove = require("mini.bufremove")
-bufremove.setup()
 
-local opts = { noremap = true, silent = true }
-
--- Cerrar buffer actual sin cerrar ventana
 vim.keymap.set("n", "<leader>bd", function()
-  bufremove.delete(0, false)
-end, { desc = "Cerrar buffer (sin forzar)", noremap = true, silent = true })
+	bufremove.delete(0, false)
+end, { desc = "Cerrar buffer (sin forzar)", silent = true })
 
--- Forzar cierre del buffer actual
 vim.keymap.set("n", "<leader>bD", function()
-  bufremove.delete(0, true)
-end, { desc = "Cerrar buffer (forzar)", noremap = true, silent = true })
+	bufremove.delete(0, true)
+end, { desc = "Cerrar buffer (forzar)", silent = true })
 
--- Navegar buffers
-vim.keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Buffer siguiente", noremap = true, silent = true })
-vim.keymap.set("n", "<S-Tab>", ":bprev<CR>", { desc = "Buffer anterior", noremap = true, silent = true })
+vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>", {
+	desc = "Buffer siguiente",
+	silent = true,
+})
 
--- Listar buffers
-vim.keymap.set("n", "<leader>bl", ":ls<CR>", { desc = "Listar buffers", noremap = true, silent = true })
+vim.keymap.set("n", "<S-Tab>", "<cmd>bprev<CR>", {
+	desc = "Buffer anterior",
+	silent = true,
+})
 
-local map = vim.api.nvim_set_keymap
+vim.keymap.set("n", "<leader>bl", "<cmd>ls<CR>", {
+	desc = "Listar buffers",
+	silent = true,
+})
 
--- split buffer
-map("n", "<leader>sh", "<C-W>s", { silent = true, desc = "Split buffer horizontally" })
-map("n", "<leader>sv", "<C-W>v", { silent = true, desc = "Split buffer vertically" })
+vim.keymap.set("n", "<leader>sh", "<C-w>s", {
+	desc = "Split buffer horizontally",
+	silent = true,
+})
 
--- Prevent automatic window resizing when splitting
+vim.keymap.set("n", "<leader>sv", "<C-w>v", {
+	desc = "Split buffer vertically",
+	silent = true,
+})
+
 vim.opt.equalalways = false

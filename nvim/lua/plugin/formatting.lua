@@ -16,8 +16,12 @@ conform.setup({
 		lua = { "stylua" },
 	},
 	format_on_save = {
-		lsp_fallback = true,
+		lsp_fallback = false,
 		async = false,
 		timeout_ms = 1000,
 	},
 })
+
+vim.keymap.set({ "n", "v" }, "<leader>f", function()
+	conform.format({ timeout_ms = 1000 })
+end, { desc = "Format file or selection" })
