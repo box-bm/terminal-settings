@@ -1,6 +1,16 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
+-- copilot
+vim.g.copilot_no_tab_map = true
+vim.keymap.set("i", "<C-l>", function()
+	return vim.fn["copilot#Accept"]("")
+end, {
+	expr = true,
+	silent = true,
+	desc = "Accept Copilot suggestion",
+})
+
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
@@ -25,8 +35,8 @@ cmp.setup({
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
-			elseif luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump()
+			elseif require("luasnip").expand_or_jumpable() then
+				require("luasnip").expand_or_jump()
 			else
 				fallback()
 			end
@@ -82,4 +92,9 @@ cmp.setup.cmdline(":", {
 
 -- Autopairs integration
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+cmp.event:on(
+	"confirm_done",
+	cmp_autopairs.on_confirm_done({
+		map_char = { tex = "" },
+	})
+)

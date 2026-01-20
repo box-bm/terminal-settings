@@ -13,6 +13,8 @@ vim.keymap.set("n", "<leader>fc", builtin.commands, {
 	desc = "Search available commands",
 })
 
+telescope.load_extension("fzf")
+
 telescope.setup({
 	defaults = {
 		mappings = {
