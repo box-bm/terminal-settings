@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# dotfiles/setup.sh
+# Only handles shell-related symlinks
+
 DOTFILES="$HOME/.config/dotfiles"
 BACKUP_DIR="$HOME/.dotfiles_backup"
 
