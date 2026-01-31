@@ -25,7 +25,7 @@ git clone https://github.com/box-bm/terminal-settings.git ~/.config
 cd ~/.config
 ```
 
-**I recommend to check [Dependencies](##Dependencies (Manual Installation)) before run each setup**
+**I recommend to check [Dependencies](#dependencies-manual-installation) before run each setup**
 
 Make scripts executable:
 
