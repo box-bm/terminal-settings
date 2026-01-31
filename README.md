@@ -16,13 +16,6 @@ Compatible with:
 - Linux
 - WSL (Windows via Linux)
 
-## Minimum Requirements
-
-- Git
-- Bash
-- Zsh
-- A Unix-like system (macOS / Linux / WSL)
-
 ## Quick Install
 
 Clone the repository:
@@ -103,10 +96,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ## Repository
 
 ### Philosophy
-	•	setup.sh only creates symlinks
-	•	The README documents
-	•	Nothing modifies the system without explicit user intent
-	•	Everything is idempotent and re-runnable
+
+- setup.sh only creates symlinks
+- The README documents
+- Nothing modifies the system without explicit user intent
+- Everything is idempotent and re-runnable
 
 ### Structure
 
@@ -130,4 +124,4 @@ If not, nothing happens.
 
 Personal use.
 
-If you read this, you need to know that is not my env keys, just my config :)
+> If you are looking my personal keys, there are not here so let's stop searching them pls :) 
