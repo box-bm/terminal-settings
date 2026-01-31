@@ -1,9 +1,27 @@
-configstore 
-github-copilot 
-op
-gh
-flutter
-.git
-git
-astro
-nvim/lazy-lock.json
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# Editor / tooling
+.vscode/
+.idea/
+
+# Neovim
+nvim/.cache/
+nvim/.local/
+nvim/.state/
+
+# Secrets / local overrides
+.env
+.env.local
+*.local
+
+# Logs
+*.log
+
+# wsl
+Thumbs.db
