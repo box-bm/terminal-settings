@@ -16,16 +16,12 @@ Compatible with:
 - Linux
 - WSL (Windows via Linux)
 
----
-
 ## Minimum Requirements
 
 - Git
 - Bash
 - Zsh
 - A Unix-like system (macOS / Linux / WSL)
-
----
 
 ## Quick Install
 
@@ -58,8 +54,6 @@ You can also run individual modules:
 ./fastfetch/setup.sh
 ```
 
-⸻
-
 ## What Each Module Does
 
 ### Zsh (dotfiles/)
@@ -75,8 +69,6 @@ You can also run individual modules:
 -	Creates a symlink for ~/.config/fastfetch
 -	Execution is controlled from Zsh
 
-⸻
-
 ## Backups
 
 Existing configurations are backed up to:
@@ -87,16 +79,14 @@ Existing configurations are backed up to:
 
 Nothing is deleted without a backup.
 
-⸻
-
 ## Dependencies (Manual Installation)
 
 This repository does not install dependencies automatically.
 All tools must be installed explicitly.
 
-The repository assumes that is already installed each of them
+Install it manually and **check the oficial website if something change along the time**.
 
-Install it manually
+**The repository assumes that is already installed each of them**
 
 ### [Homebrew](https://brew.sh)
 
@@ -110,25 +100,25 @@ Install it manually
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
----
+## Repository
 
-## Repository Philosophy
+### Philosophy
 	•	setup.sh only creates symlinks
 	•	The README documents
 	•	Nothing modifies the system without explicit user intent
 	•	Everything is idempotent and re-runnable
 
-⸻
-
-## Repository Structure
-
-dotfiles/   → shell configuration
-nvim/       → Neovim configuration
-fastfetch/  → fastfetch configuration
+### Structure
 
 Each folder is independent.
 
-⸻
+dotfiles/   → shell configuration
+
+nvim/       → Neovim configuration
+
+fastfetch/  → fastfetch configuration
+
+
 
 ## Daily Usage
 
@@ -136,12 +126,8 @@ Open a new terminal.
 If fastfetch is installed, it will run automatically.
 If not, nothing happens.
 
-⸻
-
 ## License
 
 Personal use.
-
----
 
 If you read this, you need to know that is not my env keys, just my config :)
