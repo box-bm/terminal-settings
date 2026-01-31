@@ -16,3 +16,9 @@ source ~/.config/dotfiles/zsh/env.zsh
 source ~/.config/dotfiles/zsh/paths.zsh
 source ~/.config/dotfiles/zsh/tools.zsh
 source ~/.config/dotfiles/zsh/aliases.zsh
+
+# enable fastfetch
+if [[ -o interactive ]] && [[ -z "$FASTFETCH_SHOWN" ]] && command -v fastfetch >/dev/null 2>&1; then
+  export FASTFETCH_SHOWN=1
+  fastfetch
+fi
