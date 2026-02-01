@@ -31,11 +31,12 @@ telescope.setup({
 			"--column",
 			"--smart-case",
 		},
+		sorter = require("telescope.sorters").get_fzf_sorter,
 	},
 	pickers = {
 		find_files = {
 			hidden = true,
-			no_ignore = true,
+			no_ignore = false,
 			follow = true,
 		},
 	},
