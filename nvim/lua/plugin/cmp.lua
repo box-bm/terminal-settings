@@ -1,16 +1,7 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
--- copilot
-vim.g.copilot_no_tab_map = true
-vim.keymap.set("i", "<C-l>", function()
-	return vim.fn["copilot#Accept"]("")
-end, {
-	expr = true,
-	silent = true,
-	desc = "Accept Copilot suggestion",
-})
-
+-- Load snippets
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
@@ -26,17 +17,23 @@ cmp.setup({
 	},
 
 	mapping = cmp.mapping.preset.insert({
+		-- Scroll docs
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
+
+		-- Trigger / cancel
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
+
+		-- Confirm
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 
+		-- Navigate completion
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
-			elseif require("luasnip").expand_or_jumpable() then
-				require("luasnip").expand_or_jump()
+			elseif luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
 			else
 				fallback()
 			end
@@ -72,7 +69,7 @@ cmp.setup.filetype("gitcommit", {
 
 require("cmp_git").setup()
 
--- Cmdline
+-- Cmdline `/` and `?`
 cmp.setup.cmdline({ "/", "?" }, {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
@@ -80,6 +77,7 @@ cmp.setup.cmdline({ "/", "?" }, {
 	},
 })
 
+-- Cmdline `:`
 cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
@@ -87,7 +85,6 @@ cmp.setup.cmdline(":", {
 	}, {
 		{ name = "cmdline" },
 	}),
-	matching = { disallow_symbol_nonprefix_matching = false },
 })
 
 -- Autopairs integration
