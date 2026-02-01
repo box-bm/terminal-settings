@@ -14,7 +14,6 @@ source $ZSH/oh-my-zsh.sh
 # Load modular config
 source ~/.config/dotfiles/zsh/env.zsh
 source ~/.config/dotfiles/zsh/paths.zsh
-source ~/.config/dotfiles/zsh/tools.zsh
 source ~/.config/dotfiles/zsh/aliases.zsh
 
 # enable fastfetch
