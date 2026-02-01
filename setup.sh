@@ -15,4 +15,4 @@ run() {
 
 run "zsh"       "./dotfiles/setup.sh"
 run "neovim"    "./nvim/setup.sh"
-# run "fastfetch" "./fastfetch/setup.sh"
+run "fastfetch" "./fastfetch/setup.sh"

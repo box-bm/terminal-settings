@@ -1,17 +1,20 @@
 # Personal Configuration (dotfiles, nvim, fastfetch)
 
 This repository contains my full environment configuration:
+
 - Zsh (dotfiles)
 - Neovim
 - Fastfetch
 
 The setup is **modular**, **portable**, and **safe**:
+
 - Each module has its own `setup.sh`
 - A root script orchestrates all modules
 - No dependencies are installed automatically
 - Everything is managed via symbolic links
 
 Compatible with:
+
 - macOS
 - Linux
 - WSL (Windows via Linux)
@@ -30,7 +33,7 @@ cd ~/.config
 Make scripts executable:
 
 ```sh
-chmod +x setup.sh dotfiles/setup.sh nvim/setup.sh fastfetch/setup.sh
+chmod +x setup.sh
 ```
 
 Run everything:
@@ -39,28 +42,23 @@ Run everything:
 ./setup.sh
 ```
 
-You can also run individual modules:
-
-```sh
-./dotfiles/setup.sh
-./nvim/setup.sh
-./fastfetch/setup.sh
-```
-
 ## What Each Module Does
 
 ### Zsh (dotfiles/)
--	Creates a symlink for ~/.zshrc
--	Loads modular configuration (env, paths, aliases, etc.)
--	Runs fastfetch on interactive shell startup (if installed)
+
+- Creates a symlink for ~/.zshrc
+- Loads modular configuration (env, paths, aliases, etc.)
+- Runs fastfetch on interactive shell startup (if installed)
 
 ### Neovim (nvim/)
--	Creates a symlink for ~/.config/nvim
--	Does not install Neovim or plugins automatically
+
+- Creates a symlink for ~/.config/nvim if you clone it into other place that not is .config
+- Does not install Neovim or plugins automatically
 
 ### Fastfetch (fastfetch/)
--	Creates a symlink for ~/.config/fastfetch
--	Execution is controlled from Zsh
+
+- Creates a symlink for ~/.config/fastfetch if you clone it into other place that not is .config
+- Execution is controlled from Zsh
 
 ## Backups
 
@@ -106,13 +104,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 Each folder is independent.
 
-dotfiles/   → shell configuration
+dotfiles/ → shell configuration
 
-nvim/       → Neovim configuration
+nvim/ → Neovim configuration
 
-fastfetch/  → fastfetch configuration
-
-
+fastfetch/ → fastfetch configuration
 
 ## Daily Usage
 
@@ -124,4 +120,4 @@ If not, nothing happens.
 
 Personal use.
 
-> If you are looking my personal keys, there are not here so let's stop searching them pls :) 
+> If you are looking my personal keys, there are not here so let's stop searching them pls :)
