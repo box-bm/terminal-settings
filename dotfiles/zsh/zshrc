@@ -16,8 +16,7 @@ source ~/.config/dotfiles/zsh/env.zsh
 source ~/.config/dotfiles/zsh/paths.zsh
 source ~/.config/dotfiles/zsh/aliases.zsh
 
-# enable fastfetch
-if [[ -o interactive ]] && [[ -z "$FASTFETCH_SHOWN" ]] && command -v fastfetch >/dev/null 2>&1; then
-  export FASTFETCH_SHOWN=1
+# enable fastfetch (only run on first shell, not in nested shells or new tabs)
+if [[ -o interactive ]] && [[ $SHLVL -eq 1 ]] && command -v fastfetch >/dev/null 2>&1; then
   fastfetch
 fi

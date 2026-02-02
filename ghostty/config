@@ -1,0 +1,20 @@
+# Window configuration
+window-width = 120
+window-height = 30
+
+term = xterm-256color
+
+font-family = JetBrainsMono Nerd Font
+
+theme = Jellybeans
+
+cursor-style = block
+
+background-opacity = 0.90
+background-blur = true
+background-blur-radius = 30
+
+selection-background = #303030
+
+window-padding-x = 10
+window-padding-y = 8
