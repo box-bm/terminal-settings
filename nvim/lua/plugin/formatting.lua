@@ -14,6 +14,7 @@ conform.setup({
 		markdown = { "prettier" },
 		graphql = { "prettier" },
 		lua = { "stylua" },
+		astro = { "prettier" },
 	},
 	format_on_save = {
 		lsp_fallback = false,

@@ -4,7 +4,7 @@ path=(
   $HOME/development/flutter/bin
   $ANDROID_HOME/emulator
   $ANDROID_HOME/platform-tools
-  /usr/local/bin
+  $HOME/.local/bin
   $path
 )
 
