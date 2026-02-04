@@ -64,9 +64,6 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
 		build = ":TSUpdate",
-		config = function()
-			require("plugin.treesitter")
-		end,
 	},
 
 	{
