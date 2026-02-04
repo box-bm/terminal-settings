@@ -89,9 +89,3 @@ map("n", "<C-u>", "<C-u>zz", { desc = "Scroll up (centered)" })
 -- Keep cursor centered when searching
 map("n", "n", "nzzzv", { desc = "Next search result (centered)" })
 map("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
-
--- ============================================================================
--- File Operations
--- ============================================================================
-map("n", "<C-s>", ":w<CR>", { desc = "Save file" })
-map("i", "<C-s>", "<Esc>:w<CR>a", { desc = "Save file (insert mode)" })

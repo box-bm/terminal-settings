@@ -105,6 +105,3 @@ map("n", "<leader>k", vim.lsp.buf.signature_help, { desc = "Signature Help" })
 -- Code Actions & Refactoring
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
-
--- Formatting
-map("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format Buffer" })
