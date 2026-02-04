@@ -149,19 +149,6 @@ require("nvim-tree").setup({
 				git = true,
 			},
 			glyphs = {
-				default = "",
-				symlink = "",
-				bookmark = "",
-				folder = {
-					arrow_closed = "",
-					arrow_open = "",
-					default = "",
-					open = "",
-					empty = "",
-					empty_open = "",
-					symlink = "",
-					symlink_open = "",
-				},
 				git = {
 					unstaged = "✗",
 					staged = "✓",
