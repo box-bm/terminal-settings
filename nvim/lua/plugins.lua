@@ -188,4 +188,5 @@ return {
 		"mg979/vim-visual-multi", -- For multicursor
 		branch = "master",
 	},
+	"github/copilot.vim",
 }
