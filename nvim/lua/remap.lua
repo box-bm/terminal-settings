@@ -51,10 +51,10 @@ map("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 -- ============================================================================
 -- Window Resizing
 -- ============================================================================
-map("n", "<C-Up>", ":resize +2<CR>", { desc = "Increase window height" })
-map("n", "<C-Down>", ":resize -2<CR>", { desc = "Decrease window height" })
-map("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
-map("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
+map("n", "<C-S-k>", ":resize +2<CR>", { desc = "Increase window height" })
+map("n", "<C-S-j>", ":resize -2<CR>", { desc = "Decrease window height" })
+map("n", "<C-S-h>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
+map("n", "<C-S-l>", ":vertical resize +2<CR>", { desc = "Increase window width" })
 
 -- ============================================================================
 -- Buffer Navigation
@@ -89,11 +89,6 @@ map("n", "<C-u>", "<C-u>zz", { desc = "Scroll up (centered)" })
 -- Keep cursor centered when searching
 map("n", "n", "nzzzv", { desc = "Next search result (centered)" })
 map("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
-
--- ============================================================================
--- Search & Highlighting
--- ============================================================================
-map("n", "<Esc>", ":noh<CR>", { desc = "Clear search highlighting" })
 
 -- ============================================================================
 -- File Operations
