@@ -32,6 +32,7 @@ return {
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 			"petertriho/cmp-git",
+			"onsails/lspkind.nvim", -- VSCode-like pictograms
 		},
 	},
 	-- Snippets engine and collection
@@ -63,6 +64,9 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
 		build = ":TSUpdate",
+		config = function()
+			require("plugin.treesitter")
+		end,
 	},
 
 	{
@@ -113,8 +117,29 @@ return {
 		},
 	},
 
-	-- copilot
-	"github/copilot.vim",
+	-- copilot (proper cmp integration to avoid crashes)
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				suggestion = {
+					enabled = false, -- Disable inline suggestions (use cmp instead)
+				},
+				panel = {
+					enabled = false, -- Disable panel (use cmp instead)
+				},
+			})
+		end,
+	},
+	{
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	},
 	{
 		"coder/claudecode.nvim",
 		dependencies = { "folke/snacks.nvim" },
@@ -188,5 +213,46 @@ return {
 	{
 		"mg979/vim-visual-multi", -- For multicursor
 		branch = "master",
+	},
+
+	-- Flash for better navigation
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = {},
+		keys = {
+			{
+				"s",
+				mode = { "n", "x", "o" },
+				function()
+					require("flash").jump()
+				end,
+				desc = "Flash",
+			},
+			{
+				"S",
+				mode = { "n", "x", "o" },
+				function()
+					require("flash").treesitter()
+				end,
+				desc = "Flash Treesitter",
+			},
+			{
+				"r",
+				mode = "o",
+				function()
+					require("flash").remote()
+				end,
+				desc = "Remote Flash",
+			},
+			{
+				"R",
+				mode = { "o", "x" },
+				function()
+					require("flash").treesitter_search()
+				end,
+				desc = "Treesitter Search",
+			},
+		},
 	},
 }

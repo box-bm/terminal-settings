@@ -1,3 +1,7 @@
+-- ============================================================================
+-- Buffer Remove Configuration
+-- ============================================================================
+
 local bufremove = require("mini.bufremove")
 
 vim.keymap.set("n", "<leader>bd", function()

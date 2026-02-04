@@ -1,3 +1,7 @@
+-- ============================================================================
+-- ToggleTerm Configuration
+-- ============================================================================
+
 require("toggleterm").setup({
 	size = function(term)
 		if term.direction == "vertical" then

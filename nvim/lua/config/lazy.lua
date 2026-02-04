@@ -35,5 +35,33 @@ require("lazy").setup({
 		},
 	},
 	-- automatically check for plugin updates
-	checker = { enabled = true },
+	checker = {
+		enabled = true,
+		notify = false, -- Reduce notifications
+	},
+	-- Performance
+	performance = {
+		cache = {
+			enabled = true,
+		},
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"matchit",
+				"matchparen",
+				"netrwPlugin",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
+	},
+	-- UI
+	ui = {
+		border = "rounded",
+	},
+	change_detection = {
+		notify = false,
+	},
 })
