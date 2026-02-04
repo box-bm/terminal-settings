@@ -114,29 +114,6 @@ return {
 		},
 	},
 
-	-- copilot (proper cmp integration to avoid crashes)
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = function()
-			require("copilot").setup({
-				suggestion = {
-					enabled = false, -- Disable inline suggestions (use cmp instead)
-				},
-				panel = {
-					enabled = false, -- Disable panel (use cmp instead)
-				},
-			})
-		end,
-	},
-	{
-		"zbirenbaum/copilot-cmp",
-		after = { "copilot.lua" },
-		config = function()
-			require("copilot_cmp").setup()
-		end,
-	},
 	{
 		"coder/claudecode.nvim",
 		dependencies = { "folke/snacks.nvim" },

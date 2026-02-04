@@ -43,7 +43,6 @@ cmp.setup({
 			symbol_map = { Copilot = "" },
 			before = function(entry, vim_item)
 				vim_item.menu = ({
-					copilot = "[Copilot]",
 					nvim_lsp = "[LSP]",
 					luasnip = "[Snippet]",
 					buffer = "[Buffer]",
@@ -90,7 +89,6 @@ cmp.setup({
 
 	-- Source priority and configuration
 	sources = cmp.config.sources({
-		{ name = "copilot", group_index = 2, priority = 100 },
 		{ name = "nvim_lsp", group_index = 2, priority = 90 },
 		{ name = "luasnip", group_index = 2, priority = 80 },
 		{ name = "path", group_index = 2, priority = 70 },
@@ -110,7 +108,6 @@ cmp.setup({
 	sorting = {
 		priority_weight = 2,
 		comparators = {
-			require("copilot_cmp.comparators").prioritize,
 			cmp.config.compare.offset,
 			cmp.config.compare.exact,
 			cmp.config.compare.score,
