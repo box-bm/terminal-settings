@@ -32,6 +32,7 @@ return {
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 			"petertriho/cmp-git",
+			"onsails/lspkind.nvim", -- VSCode-like pictograms
 		},
 	},
 	-- Snippets engine and collection
@@ -113,8 +114,6 @@ return {
 		},
 	},
 
-	-- copilot
-	"github/copilot.vim",
 	{
 		"coder/claudecode.nvim",
 		dependencies = { "folke/snacks.nvim" },
@@ -189,4 +188,5 @@ return {
 		"mg979/vim-visual-multi", -- For multicursor
 		branch = "master",
 	},
+	"github/copilot.vim",
 }

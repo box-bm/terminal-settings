@@ -1,3 +1,7 @@
+-- ============================================================================
+-- LSP (Language Server Protocol) Configuration
+-- ============================================================================
+
 -- Mason
 require("mason").setup()
 
@@ -10,7 +14,6 @@ require("mason-lspconfig").setup({
 		"marksman",
 		"html",
 		"cssls",
-		"solargraph",
 		"ruby_lsp",
 		"pyright",
 		"lua_ls",
@@ -28,7 +31,6 @@ local servers = {
 	"marksman",
 	"html",
 	"cssls",
-	"solargraph",
 	"ruby_lsp",
 	"pyright",
 	"lua_ls",
@@ -50,37 +52,56 @@ vim.lsp.enable("dartls")
 
 -- Diagnostics
 vim.diagnostic.config({
-	virtual_text = false,
+	virtual_text = {
+		prefix = "●",
+		spacing = 4,
+	},
 	signs = true,
 	underline = true,
 	update_in_insert = false,
 	severity_sort = true,
+	float = {
+		focusable = false,
+		style = "minimal",
+		border = "rounded",
+		source = "always",
+		header = "",
+		prefix = "",
+	},
 })
 
-vim.o.updatetime = 250
-
+-- Show diagnostics on hover (with delay)
 vim.api.nvim_create_autocmd("CursorHold", {
 	callback = function()
-		vim.diagnostic.open_float(nil, {
+		local opts = {
 			focusable = false,
 			close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
 			scope = "cursor",
 			border = "rounded",
 			source = "always",
 			prefix = " ",
-		})
+		}
+		vim.diagnostic.open_float(nil, opts)
 	end,
 })
 
--- LSP keymaps
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
-	desc = "Go to definition",
-})
+-- ============================================================================
+-- LSP Keybindings
+-- ============================================================================
 
-vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {
-	desc = "Rename symbol",
-})
+local map = vim.keymap.set
 
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {
-	desc = "Code action",
-})
+-- Navigation
+map("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
+map("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
+map("n", "gi", vim.lsp.buf.implementation, { desc = "Go to Implementation" })
+map("n", "gr", vim.lsp.buf.references, { desc = "Go to References" })
+map("n", "gt", vim.lsp.buf.type_definition, { desc = "Go to Type Definition" })
+
+-- Documentation
+map("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
+map("n", "<leader>k", vim.lsp.buf.signature_help, { desc = "Signature Help" })
+
+-- Code Actions & Refactoring
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
+map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
