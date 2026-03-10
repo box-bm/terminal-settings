@@ -1,20 +1,33 @@
-# Window configuration
-window-width = 120
-window-height = 30
+# ~/.config/ghostty/config
 
+# --- Font ---
+font-family = "JetBrains Mono"
+font-size = 13
+
+# --- Appearance ---
+# Use:  to see all available themes
+theme = Jellybeans 
+background-opacity = 0.95
+background-blur = 20
+window-padding-x = 8
+window-padding-y = 6
+window-padding-balance = true
+cursor-style = bar
+cursor-style-blink = false
 term = xterm-256color
 
-font-family = JetBrainsMono Nerd Font
+# --- Window ---
+window-decoration = auto
+macos-titlebar-style = tabs
+resize-overlay = never
+scrollbar = system 
 
-theme = Jellybeans
+# --- Selection ---
+selection-background = #44475a
+selection-foreground = #f8f8f2
 
-cursor-style = block
-
-background-opacity = 0.90
-background-blur = true
-background-blur-radius = 30
-
-selection-background = #303030
-
-window-padding-x = 10
-window-padding-y = 8
+# --- Behavior ---
+mouse-hide-while-typing = true
+copy-on-select = true
+shell-integration = detect
+shell-integration-features = cursor,title,sudo
