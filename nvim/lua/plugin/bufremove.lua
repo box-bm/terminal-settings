@@ -22,6 +22,15 @@ vim.keymap.set("n", "<S-Tab>", "<cmd>bprev<CR>", {
 	silent = true,
 })
 
+vim.keymap.set("n", "<leader>bo", function()
+	local current = vim.api.nvim_get_current_buf()
+	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+		if buf ~= current and vim.api.nvim_buf_is_loaded(buf) then
+			bufremove.delete(buf, false)
+		end
+	end
+end, { desc = "Close all other buffers", silent = true })
+
 vim.keymap.set("n", "<leader>bl", "<cmd>ls<CR>", {
 	desc = "Listar buffers",
 	silent = true,

@@ -65,11 +65,17 @@ cmp.setup({
 		-- Confirm (don't auto-select first item)
 		["<CR>"] = cmp.mapping.confirm({ select = false }),
 
-		-- Navigate completion
+		-- Tab: Copilot first, then cmp navigation, then snippet jumps
+		-- This ensures copilot wins over the cmp popup when both are visible
 		["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
+			local has_copilot = vim.fn.exists("*copilot#Accept") == 1
+			local copilot_keys = has_copilot and vim.fn["copilot#Accept"]("") or ""
+			if copilot_keys ~= "" then
+				vim.api.nvim_feedkeys(copilot_keys, "i", true)
+			elseif cmp.visible() then
 				cmp.select_next_item()
-			elseif luasnip.expand_or_jumpable() then
+			elseif luasnip.expand_or_locally_jumpable() then
+				-- locally_jumpable avoids jumping to stale points outside current buffer
 				luasnip.expand_or_jump()
 			else
 				fallback()
@@ -79,7 +85,7 @@ cmp.setup({
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
-			elseif luasnip.jumpable(-1) then
+			elseif luasnip.locally_jumpable(-1) then
 				luasnip.jump(-1)
 			else
 				fallback()

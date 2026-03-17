@@ -160,7 +160,6 @@ return {
 	{
 		"lewis6991/gitsigns.nvim", -- For Git integration
 	},
-	{ "akinsho/toggleterm.nvim", version = "*", config = true }, -- Toggle terminal
 	{
 		"stevearc/conform.nvim", -- For formatting
 		event = { "BufReadPre", "BufNewFile" },
@@ -188,5 +187,39 @@ return {
 		"mg979/vim-visual-multi", -- For multicursor
 		branch = "master",
 	},
-	"github/copilot.vim",
+	{
+		"3rd/image.nvim", -- Inline image rendering via Kitty graphics protocol
+		build = false,
+		opts = {
+			backend = "kitty",
+			integrations = {
+				markdown = { enabled = true },
+			},
+			max_width = 100,
+			max_height = 40,
+			max_height_window_percentage = math.huge,
+			max_width_window_percentage = math.huge,
+			kitty_method = "normal",
+		},
+	},
+	{
+		"github/copilot.vim",
+		init = function()
+			vim.g.copilot_no_tab_map = true
+			vim.g.copilot_assume_mapped = true
+		end,
+		config = function()
+			local enabled = true
+			vim.keymap.set("n", "<leader>ct", function()
+				if enabled then
+					vim.cmd("Copilot disable")
+					vim.notify("Copilot disabled", vim.log.levels.WARN)
+				else
+					vim.cmd("Copilot enable")
+					vim.notify("Copilot enabled", vim.log.levels.INFO)
+				end
+				enabled = not enabled
+			end, { desc = "Toggle Copilot" })
+		end,
+	},
 }
