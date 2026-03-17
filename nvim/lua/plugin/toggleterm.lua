@@ -1,1 +1,0 @@
--- toggleterm removed: use Ghostty for terminal management
