@@ -32,8 +32,17 @@ local function my_on_attach(bufnr)
 	vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
 	vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close"))
 
-	-- Split windows
-	vim.keymap.set("n", "v", api.node.open.vertical, opts("Open: Vertical Split"))
+	-- Split windows: always open a brand-new vertical split instead of showing
+	-- the window picker (which would ask to reuse an existing split a/b/etc.)
+	vim.keymap.set("n", "v", function()
+		local node = api.tree.get_node_under_cursor()
+		if not node or node.type == "directory" then
+			return
+		end
+		vim.cmd("wincmd p")
+		vim.cmd("vsplit " .. vim.fn.fnameescape(node.absolute_path))
+		vim.cmd("wincmd =")
+	end, opts("Open: New Vertical Split"))
 	vim.keymap.set("n", "s", api.node.open.horizontal, opts("Open: Horizontal Split"))
 
 	-- Help
@@ -185,4 +194,14 @@ vim.keymap.set("n", "<leader>ee", "<cmd>NvimTreeFindFile<CR>", {
 vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", {
 	silent = true,
 	desc = "Collapse File Explorer",
+})
+
+-- Auto-equalize window widths when nvim-tree closes
+vim.api.nvim_create_autocmd("BufWinLeave", {
+	pattern = "NvimTree_*",
+	callback = function()
+		vim.schedule(function()
+			vim.cmd("wincmd =")
+		end)
+	end,
 })

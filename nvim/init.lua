@@ -53,8 +53,8 @@ opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.completeopt = { "menu", "menuone", "noselect" }
 opt.pumheight = 10 -- Limit popup menu height
 
--- Mouse
-opt.mouse = "a"
+-- Mouse disabled: use keyboard navigation
+opt.mouse = ""
 
 -- Misc
 opt.hidden = true
@@ -85,5 +85,5 @@ require("plugin.gitsigns")
 require("plugin.formatting")
 require("plugin.linters")
 require("plugin.bufremove")
-require("plugin.toggleterm")
 require("plugin.treesitter")
+require("plugin.preview")

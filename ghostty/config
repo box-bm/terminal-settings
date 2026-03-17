@@ -28,6 +28,6 @@ selection-foreground = #f8f8f2
 
 # --- Behavior ---
 mouse-hide-while-typing = true
-copy-on-select = true
+copy-on-select = false
 shell-integration = detect
 shell-integration-features = cursor,title,sudo
