@@ -9,6 +9,21 @@ vim.cmd.colorscheme("jellybeans")
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "NormalFocused", { bg = "#1a1a1a" })
+
+local focus_group = vim.api.nvim_create_augroup("FocusedWindowBg", { clear = true })
+vim.api.nvim_create_autocmd("WinEnter", {
+  group = focus_group,
+  callback = function()
+    vim.wo.winhighlight = "Normal:NormalFocused"
+  end,
+})
+vim.api.nvim_create_autocmd("WinLeave", {
+  group = focus_group,
+  callback = function()
+    vim.wo.winhighlight = ""
+  end,
+})
 vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "#1c1c1c" })
 vim.api.nvim_set_hl(0, "Visual", { bg = "#303030" })

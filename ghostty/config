@@ -7,20 +7,21 @@ font-size = 13
 # --- Appearance ---
 # Use:  to see all available themes
 theme = Jellybeans 
-background-opacity = 0.95
-background-blur = 20
-window-padding-x = 8
-window-padding-y = 6
-window-padding-balance = true
+background-opacity = 0.85
+background-blur = true
+window-padding-x = 4
+window-padding-y = 4
 cursor-style = bar
 cursor-style-blink = false
 term = xterm-256color
 
 # --- Window ---
 window-decoration = auto
-macos-titlebar-style = tabs
+macos-titlebar-style = native
+macos-window-shadow = true
 resize-overlay = never
-scrollbar = system 
+scrollbar = system
+window-step-resize = false
 
 # --- Selection ---
 selection-background = #44475a
