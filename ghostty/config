@@ -18,6 +18,7 @@ term = xterm-256color
 # --- Window ---
 window-decoration = auto
 macos-titlebar-style = native
+macos-icon = official
 macos-window-shadow = true
 resize-overlay = never
 scrollbar = system
