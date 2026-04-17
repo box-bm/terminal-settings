@@ -7,27 +7,15 @@ font-size = 13
 # --- Appearance ---
 # Use:  to see all available themes
 theme = Jellybeans 
-window-padding-x = 4
-window-padding-y = 4
-cursor-style = bar
-cursor-style-blink = false
 term = xterm-256color
 
 # --- Window ---
 window-decoration = auto
 macos-titlebar-style = transparent
-macos-icon = official
-macos-window-shadow = true
-resize-overlay = never
 scrollbar = system
 window-step-resize = false
-
-# --- Selection ---
-selection-background = #44475a
-selection-foreground = #f8f8f2
 
 # --- Behavior ---
 mouse-hide-while-typing = true
 copy-on-select = false
 shell-integration = detect
-shell-integration-features = cursor,title,sudo
