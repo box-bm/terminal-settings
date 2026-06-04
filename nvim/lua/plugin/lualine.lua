@@ -4,7 +4,7 @@
 
 require("lualine").setup({
 	options = {
-		theme = "jellybeans",
+		theme = "catppuccin",
 		icons_enabled = true,
 		always_divide_middle = true,
 		globalstatus = true,

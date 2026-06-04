@@ -1,19 +1,19 @@
 # ~/.config/ghostty/config
 
 # --- Font ---
-font-family = "JetBrains Mono"
+font-family = "JetBrainsMono Nerd Font"
 font-size = 13
 
 # --- Appearance ---
-# Use:  to see all available themes
-theme = Jellybeans 
-term = xterm-256color
+theme = catppuccin-mocha
+
+# --- Transparency & Blur (macOS) ---
+background-opacity = 0.90
+background-blur-radius = 20
 
 # --- Window ---
-window-decoration = auto
-macos-titlebar-style = transparent
-scrollbar = system
-window-step-resize = false
+window-padding-color = background
+unfocused-split-opacity = 0.65
 
 # --- Behavior ---
 mouse-hide-while-typing = true
