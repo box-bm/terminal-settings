@@ -5,7 +5,7 @@ font-family = "JetBrainsMono Nerd Font"
 font-size = 13
 
 # --- Appearance ---
-theme = catppuccin-mocha
+theme = "Catppuccin Mocha"
 
 # --- Transparency & Blur (macOS) ---
 background-opacity = 0.90
