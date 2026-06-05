@@ -1,12 +1,24 @@
 return {
 	-- theme
 	{
-		"wtfox/jellybeans.nvim",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		lazy = false,
 		priority = 1000,
 		opts = {
-			transparent = true,
-		}, -- Optional
+			flavour = "mocha",
+			transparent_background = true,
+			integrations = {
+				cmp = true,
+				nvim_tree = true,
+				treesitter = true,
+				gitsigns = true,
+				telescope = { enabled = true },
+				which_key = true,
+				mini = { enabled = true },
+				lualine = true,
+			},
+		},
 	},
 	-- icons
 	{ "nvim-mini/mini.nvim", version = "*" },
@@ -190,6 +202,7 @@ return {
 	{
 		"3rd/image.nvim", -- Inline image rendering via Kitty graphics protocol
 		build = false,
+		ft = { "markdown", "rst" },
 		opts = {
 			backend = "kitty",
 			integrations = {
