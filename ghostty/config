@@ -4,16 +4,39 @@
 font-family = "JetBrainsMono Nerd Font"
 font-size = 13
 
-# --- Appearance ---
-theme = "Catppuccin Mocha"
+# --- Appearance: Coldcarbon (true black, cold blue/teal/cyan/green only) ---
+background = #000000
+foreground = #f2f4f8
 
-# --- Transparency & Blur (macOS) ---
-background-opacity = 0.90
-background-blur-radius = 20
+palette = 0=#000000
+palette = 1=#ee5396
+palette = 2=#42be65
+palette = 3=#d4a72c
+palette = 4=#33b1ff
+palette = 5=#08bdba
+palette = 6=#3ddbd9
+palette = 7=#f2f4f8
+palette = 8=#525252
+palette = 9=#ff6b9d
+palette = 10=#52d878
+palette = 11=#e8c14c
+palette = 12=#78a9ff
+palette = 13=#33d9d4
+palette = 14=#82f0ee
+palette = 15=#ffffff
+
+cursor-color = #ffffff
+cursor-text = #000000
+selection-background = #2e2e2e
+selection-foreground = #f2f4f8
+
+# --- No transparency, no blur ---
+background-opacity = 1
+background-blur-radius = 0
 
 # --- Window ---
 window-padding-color = background
-unfocused-split-opacity = 0.65
+unfocused-split-opacity = 1
 
 # --- Behavior ---
 mouse-hide-while-typing = true

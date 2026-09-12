@@ -2,45 +2,56 @@
 -- Lualine Statusline Configuration
 -- ============================================================================
 
-local C = require("catppuccin.palettes").get_palette("mocha")
-local transparent_bg = C.mantle
+-- Coldcarbon palette (mirrors plugin/theme.lua): true black + blue/teal/cyan/green
+local C = {
+	black = "#000000",
+	surface = "#161616",
+	surface2 = "#2e2e2e",
+	text = "#f2f4f8",
+	grey = "#525252",
+	blue = "#33b1ff",
+	teal = "#08bdba",
+	cyan = "#3ddbd9",
+	green = "#42be65",
+	red = "#ee5396", -- kept only for REPLACE mode (danger semantics)
+}
 
-local catppuccin_theme = {
+local coldcarbon_theme = {
 	normal = {
-		a = { bg = C.blue, fg = C.mantle, gui = "bold" },
-		b = { bg = C.surface0, fg = C.blue },
-		c = { bg = transparent_bg, fg = C.text },
+		a = { bg = C.blue, fg = C.black, gui = "bold" },
+		b = { bg = C.surface, fg = C.blue },
+		c = { bg = C.black, fg = C.text },
 	},
 	insert = {
-		a = { bg = C.green, fg = C.base, gui = "bold" },
-		b = { bg = C.surface0, fg = C.green },
+		a = { bg = C.green, fg = C.black, gui = "bold" },
+		b = { bg = C.surface, fg = C.green },
 	},
 	terminal = {
-		a = { bg = C.green, fg = C.base, gui = "bold" },
-		b = { bg = C.surface0, fg = C.green },
+		a = { bg = C.green, fg = C.black, gui = "bold" },
+		b = { bg = C.surface, fg = C.green },
 	},
 	command = {
-		a = { bg = C.peach, fg = C.base, gui = "bold" },
-		b = { bg = C.surface0, fg = C.peach },
+		a = { bg = C.teal, fg = C.black, gui = "bold" },
+		b = { bg = C.surface, fg = C.teal },
 	},
 	visual = {
-		a = { bg = C.mauve, fg = C.base, gui = "bold" },
-		b = { bg = C.surface0, fg = C.mauve },
+		a = { bg = C.cyan, fg = C.black, gui = "bold" },
+		b = { bg = C.surface, fg = C.cyan },
 	},
 	replace = {
-		a = { bg = C.red, fg = C.base, gui = "bold" },
-		b = { bg = C.surface0, fg = C.red },
+		a = { bg = C.red, fg = C.black, gui = "bold" },
+		b = { bg = C.surface, fg = C.red },
 	},
 	inactive = {
-		a = { bg = transparent_bg, fg = C.blue },
-		b = { bg = transparent_bg, fg = C.surface1, gui = "bold" },
-		c = { bg = transparent_bg, fg = C.overlay0 },
+		a = { bg = C.black, fg = C.blue },
+		b = { bg = C.black, fg = C.surface2, gui = "bold" },
+		c = { bg = C.black, fg = C.grey },
 	},
 }
 
 require("lualine").setup({
 	options = {
-		theme = catppuccin_theme,
+		theme = coldcarbon_theme,
 		icons_enabled = true,
 		always_divide_middle = true,
 		globalstatus = true,

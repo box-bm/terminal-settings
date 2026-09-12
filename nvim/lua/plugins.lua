@@ -1,24 +1,9 @@
 return {
-	-- theme
+	-- theme: Oxocarbon (IBM Carbon), pushed to true black with a cold-only accent set
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
+		"nyoom-engineering/oxocarbon.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {
-			flavour = "mocha",
-			transparent_background = true,
-			integrations = {
-				cmp = true,
-				nvim_tree = true,
-				treesitter = true,
-				gitsigns = true,
-				telescope = { enabled = true },
-				which_key = true,
-				mini = { enabled = true },
-				lualine = true,
-			},
-		},
 	},
 	-- icons
 	{ "nvim-mini/mini.nvim", version = "*" },
